@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">Enable Fanart</string>
+    <string id="30001">Enable Trailer</string>
+    <string id="30002">Use TMDB(themoviedb.org) Thumbs</string>
+    <string id="30003">Use TMDB(themoviedb.org) Fanart</string>
+    <string id="30004">Use TMDB(themoviedb.org) cast data first</string>
+    <string id="30010">Chinese Title</string>
+    <string id="30011">English Title</string>
+    <string id="30012">Chinese Title (English Title)</string>
+    <string id="30013">English Title (Chinese Title)</string>
+    <string id="30100">Movie title Prefer display format</string>
+</strings>

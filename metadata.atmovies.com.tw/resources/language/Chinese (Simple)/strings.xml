@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">启用同人画</string>
+    <string id="30001">启用预告片</string>
+    <string id="30002">使用 TMDB(themoviedb.org) 海报</string>
+    <string id="30003">使用 TMDB(themoviedb.org) 剧照</string>
+    <string id="30004">优先使用 TMDB(themoviedb.org) 演员表</string>
+    <string id="30010">中文片名</string>
+    <string id="30011">英文片名</string>
+    <string id="30012">中文片名 (英文片名)</string>
+    <string id="30013">英文片名 (中文片名)</string>
+    <string id="30100">电影片名显示偏好格式</string>
+</strings>

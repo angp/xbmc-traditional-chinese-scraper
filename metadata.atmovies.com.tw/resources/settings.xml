@@ -3,6 +3,7 @@
     <setting label="30100" type="enum" id="titleFormat" lvalues="30010|30011|30012|30013" default="2"/>
     <setting label="30000" type="bool" id="fanart" default="true" visible="false"/>
     <setting label="30001" type="bool" id="trailer" default="true"  visible="false"/>
+    <setting label="30101" type="enum" id="genreFormat" lvalues="30020|30021|30022" default="2"/>
     <setting label="30002" type="bool" id="useTMDBThumbs" default="false"/>
     <setting label="30003" type="bool" id="useTMDBFanart" default="false"/>
     <setting label="30004" type="bool" id="useTMDBCastFirst" default="true"/>

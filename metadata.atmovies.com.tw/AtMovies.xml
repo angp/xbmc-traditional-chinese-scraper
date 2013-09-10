@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2013-09-09" name="New Scraper" content="movies" language="en">
+<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2013-09-10" name="New Scraper" content="movies" language="en">
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$1" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/search.cfm?action=home&amp;amp;fr=atmovies-cfm&amp;amp;type=F&amp;amp;search_term=\1&lt;/url&gt;" dest="3">
 			<expression noclean="1" />
@@ -28,51 +28,48 @@
 			<!--title chinese-->
 			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[ \t\n\r\cM]*(.+?)[ \t\n\r\cM]*&lt;/span&gt;&lt;br&gt;</expression>
+					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
 				</RegExp>
 				<expression>0</expression>
 			</RegExp>
 			<!--title english-->
 			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[ \t\n\r\cM]*(.+?)[ \t\n\r\cM]*&lt;/span&gt;</expression>
+					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[ \s]*&lt;/span&gt;</expression>
 				</RegExp>
 				<expression>1</expression>
 			</RegExp>
 			<!--title chinese (english)-->
 			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[ \t\n\r\cM]*(.+?)[ \t\n\r\cM]*&lt;/span&gt;&lt;br&gt;</expression>
+					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
 				</RegExp>
 				<RegExp input="$$1" output=" (\1)" dest="4+">
-					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[ \t\n\r\cM]*(.+?)[ \t\n\r\cM]*&lt;/span&gt;</expression>
+					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;</expression>
 				</RegExp>
 				<expression>2</expression>
 			</RegExp>
 			<!--title english (chinese)-->
 			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[ \t\n\r\cM]*(.+?)[ \t\n\r\cM]*&lt;/span&gt;</expression>
+					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;</expression>
 				</RegExp>
 				<RegExp input="$$1" output=" (\1)" dest="4+">
-					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[ \t\n\r\cM]*(.+?)[ \t\n\r\cM]*&lt;/span&gt;&lt;br&gt;</expression>
+					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
 				</RegExp>
 				<expression>3</expression>
 			</RegExp>
 			<!--year-->
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression>&lt;[Bb]&gt;影片年份：&lt;/[Bb]&gt;(\d+)[ \t\n\r\cM]+</expression>
+				<expression>&lt;b&gt;影片年份：&lt;/b&gt;(\d+)[\s]+</expression>
 			</RegExp>
 			<!--runtime-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression>&lt;[Bb]&gt;片長：([\d]+分)&amp;nbsp;</expression>
+				<expression>&lt;B&gt;片長：([\d]+)分&amp;nbsp;</expression>
 			</RegExp>
 			<!--outline-->
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
-				<expression>&lt;font class="at11" color="606060"&gt;[ \t\n\r\cM]*(.*?)[ \t\n\r\cM]*&lt;/font&gt;</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
-				<expression>&lt;font class=at11 color=606060&gt;[ \t\n\r\cM]*(.*?)[ \t\n\r\cM]*&lt;/font&gt;</expression>
+				<expression>&lt;font class=at11 color=606060&gt;[\s]*(.*?)[\s]*&lt;/font&gt;</expression>
 			</RegExp>
 			<!--plot-->
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
@@ -81,9 +78,6 @@
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBStudioByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression />
-			</RegExp>-->
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
 				<expression trim="1">&lt;b&gt;出　　品：&lt;/b&gt;[\s]*(.*?)[\s]*&lt;BR&gt;</expression>
 			</RegExp>
@@ -93,18 +87,9 @@
 			<RegExp input="$$6" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
-				<expression trim="1">&lt;B&gt;導演：&lt;/B&gt;&lt;/td&gt;[\s]*&lt;td valign="top" nowrap width=80%&gt;[\s]*&lt;a href=".[^\"]*"&gt;[\s]*(.*?)[\s]*&lt;/a&gt; &lt;BR&gt;</expression>
-			</RegExp>-->
 			<RegExp input="$$9" output="&lt;chain function=&quot;GetDirectorById&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--<RegExp input="$$1" output="\1" dest="7">
-				<expression clear="yes" noclean="1">&lt;B&gt;編劇：&lt;/B&gt;&lt;/td&gt;[\s]*&lt;td valign="top" nowrap width=80%&gt;[\s]*(.*?)[\s]*&lt;/td&gt;</expression>
-			</RegExp>
-			<RegExp input="$$7" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
-				<expression repeat="yes">&lt;a href=".[^\"]*"&gt;[\s]*(.*?)[\s]*&lt;/a&gt; &lt;BR&gt;</expression>
-			</RegExp>-->
 			<RegExp input="$$9" output="&lt;chain function=&quot;GetCreditsById&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
@@ -129,24 +114,22 @@
 			<RegExp conditional="useTMDBCastFirst" input="$$6" output="1" dest="8">
 				<expression>China</expression>
 			</RegExp>
+      <RegExp conditional="useTMDBCastFirst" input="$$6" output="0" dest="8">
+				<expression>USA</expression>
+			</RegExp>
 			<RegExp conditional="useTMDBCastFirst" input="$$8" output="&lt;chain function=&quot;GetTMDBCastByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>0</expression>
 			</RegExp>
 			<RegExp conditional="useTMDBCastFirst" input="$$8" output="&lt;chain function=&quot;GetCastById&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
 				<expression>1</expression>
 			</RegExp>
-      <!--
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="7">
-				<expression />
+			<!--genre english-->
+			<RegExp input="$INFO[genreFormat]" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>1</expression>
 			</RegExp>
-      -->
-      <!--
-			<RegExp input="$$11" output="&lt;genre&gt;EFG&lt;/genre&gt;\1&lt;genre&gt;ABC&lt;/genre&gt;" dest="5+">
-				<expression noclena="1">(.*)</expression>
-			</RegExp>
-      -->
-			<RegExp input="$$2" output="&lt;chain function=&quot;ChangeLangsGenres&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression/>
+			<!--genre chinese-->
+			<RegExp input="$INFO[genreFormat]" output="&lt;chain function=&quot;GetZhGenresByTMDBId&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>2</expression>
 			</RegExp>
 			<RegExp conditional="useTMDBThumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
@@ -253,22 +236,151 @@
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
-	</ParseFanart>
-	<ChangeLangsGenres dest="5">
-		<RegExp input="$$3" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-       <RegExp input="$$2" output="\1" dest="3">
-          <RegExp input="$$1" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$1&lt;/chain&gt;" dest="2">
-    				<expression />
-    			</RegExp>
-        <expression noclean="1" />
-      </RegExp> 
-			<RegExp input="$$3" output="\1動作\2" dest="3">
-				<expression noclean="1,2">(.*)Action(.*)</expression>
-			</RegExp>
-      <RegExp input="$$3" output="&lt;genre&gt;ABC&lt;/genre&gt;" dest="3+">
-				<expression noclean="1"/>
+	</ParseFanart>  
+  <!-- 請注意, 此 TMDB api_key 為我個人為此 scraper 所申請, 若要使用在別處, 請自行至 TMDB (www.themoviedb.org) 免費申請, 謝謝 -->
+	<GetZhGenresByTMDBId dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;TranslateTMDBGenres&quot; cache=&quot;tmdb-en-\1.json&quot;&gt;http://api.themoviedb.org/3/movie/\1?api_key=d955d8f02a3f2480a51881fe4c96f10e&amp;amp;language=en&lt;/url&gt;" dest="5">
+				<expression />
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
-	</ChangeLangsGenres>
+	</GetZhGenresByTMDBId>
+	<TranslateTMDBGenres dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression clear="yes" noclean="1">"genres":\[([^\]]*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="2">
+				<expression repeat="yes">"name":"([^"]*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1動作\2" dest="2">
+				<expression noclean="1,2">(.*)Action(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1冒險\2" dest="2">
+				<expression noclean="1,2">(.*)Adventure(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1動畫\2" dest="2">
+				<expression noclean="1,2">(.*)Animation(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1英語\2" dest="2">
+				<expression noclean="1,2">(.*)British(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1喜劇\2" dest="2">
+				<expression noclean="1,2">(.*)Comedy(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1犯罪\2" dest="2">
+				<expression noclean="1,2">(.*)Crime(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1災難\2" dest="2">
+				<expression noclean="1,2">(.*)Disaster(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1記錄\2" dest="2">
+				<expression noclean="1,2">(.*)Documentary(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1劇情\2" dest="2">
+				<expression noclean="1,2">(.*)Drama(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1東方\2" dest="2">
+				<expression noclean="1,2">(.*)Eastern(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1教育\2" dest="2">
+				<expression noclean="1,2">(.*)Education(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1情色\2" dest="2">
+				<expression noclean="1,2">(.*)Erotic(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1家庭\2" dest="2">
+				<expression noclean="1,2">(.*)Family(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1影迷電影\2" dest="2">
+				<expression noclean="1,2">(.*)Fan Film(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1奇幻\2" dest="2">
+				<expression noclean="1,2">(.*)Fantasy(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1黑色\2" dest="2">
+				<expression noclean="1,2">(.*)Film Noir(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1外語\2" dest="2">
+				<expression noclean="1,2">(.*)Foreign(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1歷史\2" dest="2">
+				<expression noclean="1,2">(.*)History(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1節日\2" dest="2">
+				<expression noclean="1,2">(.*)Holiday(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1恐怖\2" dest="2">
+				<expression noclean="1,2">(.*)Horror(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1獨立\2" dest="2">
+				<expression noclean="1,2">(.*)Indie(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1兒童\2" dest="2">
+				<expression noclean="1,2">(.*)Kids(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1音樂\2" dest="2">
+				<expression noclean="1,2">(.*)Music(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1歌舞\2" dest="2">
+				<expression noclean="1,2">(.*)Musical(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1懸疑\2" dest="2">
+				<expression noclean="1,2">(.*)Mystery(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1新黑色\2" dest="2">
+				<expression noclean="1,2">(.*)Neo-noir(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1新聞\2" dest="2">
+				<expression noclean="1,2">(.*)News(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1真人秀\2" dest="2">
+				<expression noclean="1,2">(.*)Reality(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1公路\2" dest="2">
+				<expression noclean="1,2">(.*)Road Movie(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1愛情\2" dest="2">
+				<expression noclean="1,2">(.*)Romance(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1科幻\2" dest="2">
+				<expression noclean="1,2">(.*)Science Fiction(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1短片\2" dest="2">
+				<expression noclean="1,2">(.*)Short(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1肥皂劇\2" dest="2">
+				<expression noclean="1,2">(.*)Soap(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1體育\2" dest="2">
+				<expression noclean="1,2">(.*)Sport(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1賽事\2" dest="2">
+				<expression noclean="1,2">(.*)Sporting Event(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1體育\2" dest="2">
+				<expression noclean="1,2">(.*)Sports Film(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1驚悚\2" dest="2">
+				<expression noclean="1,2">(.*)Suspense(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1電視電影\2" dest="2">
+				<expression noclean="1,2">(.*)TV movie(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1脫口秀\2" dest="2">
+				<expression noclean="1,2">(.*)Talk(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1驚悚\2" dest="2">
+				<expression noclean="1,2">(.*)Thriller(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1戰爭\2" dest="2">
+				<expression noclean="1,2">(.*)War(.*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1西部\2" dest="2">
+				<expression noclean="1,2">(.*)Western(.*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</TranslateTMDBGenres>
 </scraper>

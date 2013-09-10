@@ -1,6 +1,14 @@
+Version 1.4.0 (Sep 10 2013)
+ - 增加TMDB電影分類資料中文翻譯功能. 
+ - 增加電影分類格式設定功能, 可選擇
+   "不使用電影分類(AtMovies本就無分類資料)"
+   "使用 TMDB 電影分類(英文)"
+   "使用 TMDB 電影分類(中文翻譯)"
+
 Version 1.3.12 (Sep 6 2013)
  - 增加優先使用 TMDB(themoviedb.org) 演員表的選項
-   當勾選後, 除出品國為Taiwan, China的電影外, 其餘優先使用 TMDB 的演員表   
+   當勾選後, 除出品國為Taiwan, China的電影外, 其餘優先使用 TMDB 的演員表
+   (選擇使用TMDB演員表會有演員照片)   
 
 Version 1.3.11 (Sep 6 2013)
  - 將studio的欄位由原本的 TMDB 改由 AtMovies抓取 

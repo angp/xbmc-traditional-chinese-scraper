@@ -24,3 +24,9 @@ https://code.google.com/p/traditional-chinese-xbmc-scrapers/
 若對這有任何問題或建議, 請至底下的blog, 那裡有較多的說明也比較方便
 回覆, 謝謝!
 http://1somethings.blogspot.tw/search/label/XBMC
+
+直接下載:
+
+AtMovies: https://github.com/angp/xbmc-traditional-chinese-scraper/releases/download/v1.4.0/metadata.atmovies.com.tw-1.4.0.zip
+
+Yahoo!Movie : https://github.com/angp/xbmc-traditional-chinese-scraper/releases/download/yahoo_v1.0.2/metadata.tw.movie.yahoo.com-1.0.2.zip

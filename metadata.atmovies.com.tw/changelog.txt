@@ -1,3 +1,10 @@
+Version 1.4.3 (Sep 12 2013)
+ - 增加將檔名中全型":" 在搜尋前轉換為半型":"的機制, 
+   以解決 AtMovies 名稱搜尋一定要100%吻合的限制, 但":"卻無法在檔名中出現的問題
+   檔名一定要跟 AtMovies 搜尋到的一樣, 但將半型";"先改成全型":", 以便符合檔名規範.
+   ex: 原 Hansel and Gretel: Witch Hunters (2012) [女巫獵人]
+       改 Hansel and Gretel： Witch Hunters (2012) [女巫獵人]
+       
 Version 1.4.0 (Sep 10 2013)
  - 增加TMDB電影分類資料中文翻譯功能. 
  - 增加電影分類格式設定功能, 可選擇

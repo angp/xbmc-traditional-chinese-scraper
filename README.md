@@ -27,6 +27,6 @@ http://1somethings.blogspot.tw/search/label/XBMC
 
 直接下載:
 
-AtMovies: https://github.com/angp/xbmc-traditional-chinese-scraper/releases/download/atmovies_v1.4.3/metadata.atmovies.com.tw-1.4.3.zip
+AtMovies: https://github.com/angp/xbmc-traditional-chinese-scraper/releases/download/atmovies_v1.4.4/metadata.atmovies.com.tw_1.4.4.zip
 
 Yahoo!Movie : https://github.com/angp/xbmc-traditional-chinese-scraper/releases/download/yahoo_v1.0.3/metadata.tw.movie.yahoo.com-1.0.3.zip

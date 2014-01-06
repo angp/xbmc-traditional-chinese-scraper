@@ -14,4 +14,5 @@
 	<string id="30022">使用 TMDB 分類(中文翻譯)</string>
 	<string id="30100">電影片名顯示偏好格式</string>
 	<string id="30101">電影分類格式</string>
+	<string id="30102">忽略英文片名前導的"The"</string>
 </strings>

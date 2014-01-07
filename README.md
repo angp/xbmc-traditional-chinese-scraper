@@ -25,8 +25,16 @@ https://code.google.com/p/traditional-chinese-xbmc-scrapers/
 回覆, 謝謝!
 http://1somethings.blogspot.tw/search/label/XBMC
 
+為了將 scraper 送進官方庫裡,以方便讓更多人可以直接點選安裝,不用再另外下載, 
+所以從 AtMovies_v1.4.4 , Yahoo_v1.0.3 開始, 拆成2個專案, 以符合要求, 之後
+只會在那兩個專案更新, 這邊只作為舊資料查詢
+
+開眼電影網 AtMovies scraper: https://github.com/angp/metadata.atmovies.com.tw
+
+Yahoo!奇摩電影 scraper: https://github.com/angp/metadata.tw.movie.yahoo.com
+
 直接下載:
 
-AtMovies: https://github.com/angp/xbmc-traditional-chinese-scraper/releases/download/atmovies_v1.4.4/metadata.atmovies.com.tw_1.4.4.zip
+AtMovies: https://github.com/angp/metadata.atmovies.com.tw/archive/atmovies_v1.4.4.zip 
 
-Yahoo!Movie : https://github.com/angp/xbmc-traditional-chinese-scraper/releases/download/yahoo_v1.0.3/metadata.tw.movie.yahoo.com-1.0.3.zip
+Yahoo!Movie : https://github.com/angp/metadata.tw.movie.yahoo.com/archive/yahoo_v1.0.3.zip
